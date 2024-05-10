@@ -1,0 +1,32 @@
+.order-section-one-container {
+    width: 97%;
+    margin: auto;
+    background-color: rgb(197, 193, 193);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+   
+    
+}
+.order-section-one-left{
+    width:50%;
+    align-items: center;
+    display: flex
+}
+
+.order-section-one-right{
+    width:50%;
+    text-align: end;
+    margin-bottom: 12px;
+}
+
+.search-box{
+    width:65%;
+    height: 35px;
+    margin-top: 13px;
+    margin-right: 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    outline: none;
+    padding-left: 10px;
+}

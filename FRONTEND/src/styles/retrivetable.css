@@ -1,0 +1,58 @@
+#app-table{
+    background-color: rgb(111, 186, 255);
+}
+
+#table-button{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100px;
+}
+
+#report-button{
+    margin-top: 15px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    width: 200px;
+}
+
+#action-button{
+    align-items: center;
+}
+
+.order-section-two-container {
+    width: 97%;
+    /* height: 50px; */
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.order-section-three-container {
+    width: 97%;
+    margin: auto;
+    margin-top: 2px;
+}
+
+.order-table-col-1 {
+    text-align: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.order-table-row {
+    min-height: 40px;
+    align-items: center;
+    background-color: rgb(235, 232, 232);
+    margin-top: 1px;
+}
+
+.order-table-row:hover {
+    transform: scale(1.0);
+    background-color: rgba(5, 5, 252, 0.071);
+}
+.abc{
+    text-align: center;
+}

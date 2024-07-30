@@ -1,0 +1,41 @@
+.home-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333; /* Background color of the navigation bar */
+}
+
+.home-ll {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.home-ll h3 {
+  display: block;
+  color: white; /* Text color of the navigation links */
+  text-align: center;
+  padding: 14px 16px; /* Padding around the navigation links */
+  text-decoration: none;
+  font-size: 16px; /* Font size of the navigation links */
+}
+
+.home-ll h3:hover {
+  background-color: #111; /* Background color of the navigation links on hover */
+}
+
+/* Styles for the register button */
+.home-ll button {
+  background-color: #ffffff; /* Background color of the register button */
+  color: #333; /* Text color of the register button */
+  padding: 12px 12px; /* Padding around the register button */
+  border: none;
+  cursor: pointer;
+  font-size: 14px; /* Font size of the register button */
+  margin-left: 700px;
+  border-radius: 20px; /* Move the button to the right */
+}
+
+.home-ll button:hover {
+  background-color: #e0e0e0; /* Background color of the register button on hover */
+}

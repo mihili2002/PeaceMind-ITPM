@@ -23,9 +23,10 @@ function Home() {
         <br />
         Let’s take the first step towards a better you, one session at a time.
       </p>
-      <div className="flex justify-center">
+      //commented client manager button
+{/*       <div className="flex justify-center">
         <button><Link to={'/User'}>Client-Manager</Link></button>
-      </div>
+      </div> */}
 
     </>
   );

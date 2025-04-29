@@ -11,7 +11,7 @@ const TherapistDashboard = () => {
     <div className="dashboard flex">
       <TherapistSidebar />
       <div className='dashboard-content flex flex-col justify-center items-center'>
-        <h2 className="text-2xl font-bold mb-2">Welcome, Therapist!</h2>
+        <h2 className="text-2xl font-bold mb-2">Welcome to PeaceMind!</h2>
         <p className="text-lg mb-4">Manage your therapy sessions here.</p>
     
         <div className="flex">

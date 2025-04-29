@@ -1,11 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import {jwtDecode} from 'jwt-decode'
+import { jwtDecode } from 'jwt-decode'
 
 const User = () => {
   const token = localStorage.getItem('token');
-  const decodedToken = jwtDecode(token); // Decode the token to get user ID
+  const decodedToken = jwtDecode(token);
 
   const { id } = useParams();
   const [fullname, setfullname] = useState('');
@@ -49,24 +49,26 @@ const User = () => {
         alert("details updated")
       })
       .catch(err => console.error(err));
-  }
-
+  }
 
   return (
-    <div className='flex items-center justify-center h-full mt-5'>
-      
-      <form onSubmit={update} className="bg-purple-700 p-6 rounded-lg shadow-md">
-        <input type="text" placeholder='Name' value={fullname} onChange={(e) => setfullname(e.target.value)} className="block w-full px-4 py-2 mb-4 rounded-md bg-purple-200 text-purple-700" />
-        <input type="text" placeholder='address' value={address} onChange={(e) => setaddress(e.target.value)} className="block w-full px-4 py-2 mb-4 rounded-md bg-purple-200 text-purple-700" />
-        <input type="text" placeholder='email' value={email} onChange={(e) => setemail(e.target.value)} className="block w-full px-4 py-2 mb-4 rounded-md bg-purple-200 text-purple-700" />
-        <input type="text" placeholder='NIC' value={nic} onChange={(e) => setNic(e.target.value)} className="block w-full px-4 py-2 mb-4 rounded-md bg-purple-200 text-purple-700" />
-        <input type="text" placeholder='Gender' value={gender} onChange={(e) => setGender(e.target.value)} className="block w-full px-4 py-2 mb-4 rounded-md bg-purple-200 text-purple-700" />
-        <input type="date" placeholder='dob' value={dob} onChange={(e) => setdob(e.target.value)} className="block w-full px-4 py-2 mb-4 rounded-md bg-purple-200 text-purple-700" />
-        <input type="text" placeholder='phone' value={phone} onChange={(e) => setphone(e.target.value)} className="block w-full px-4 py-2 mb-4 rounded-md bg-purple-200 text-purple-700" />
-        <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} className="block w-full px-4 py-2 mb-4 rounded-md bg-purple-200 text-purple-700" />
-        <button type="submit" className='bg-light-blue-500 text-white font-bold px-5 py-3 rounded-md hover:bg-light-blue-700'>Update Account</button>
+    <div className="flex justify-center items-center min-h-screen bg-white">
+      <form
+        onSubmit={update}
+        className="bg-blue-100 p-8 rounded-xl shadow-lg w-full max-w-md"
+      >
+        <h2 className="text-2xl font-bold text-blue-700 mb-6 text-center">Update Profile</h2>
+        <input type="text" placeholder='Name' value={fullname} onChange={(e) => setfullname(e.target.value)} className="block w-full px-4 py-2 mb-4 rounded-md bg-white text-blue-700 border border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <input type="text" placeholder='Address' value={address} onChange={(e) => setaddress(e.target.value)} className="block w-full px-4 py-2 mb-4 rounded-md bg-white text-blue-700 border border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <input type="text" placeholder='Email' value={email} onChange={(e) => setemail(e.target.value)} className="block w-full px-4 py-2 mb-4 rounded-md bg-white text-blue-700 border border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <input type="text" placeholder='NIC' value={nic} onChange={(e) => setNic(e.target.value)} className="block w-full px-4 py-2 mb-4 rounded-md bg-white text-blue-700 border border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <input type="text" placeholder='Gender' value={gender} onChange={(e) => setGender(e.target.value)} className="block w-full px-4 py-2 mb-4 rounded-md bg-white text-blue-700 border border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <input type="date" placeholder='DOB' value={dob} onChange={(e) => setdob(e.target.value)} className="block w-full px-4 py-2 mb-4 rounded-md bg-white text-blue-700 border border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <input type="text" placeholder='Phone' value={phone} onChange={(e) => setphone(e.target.value)} className="block w-full px-4 py-2 mb-4 rounded-md bg-white text-blue-700 border border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} className="block w-full px-4 py-2 mb-6 rounded-md bg-white text-blue-700 border border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <button type="submit" className="w-full bg-blue-700 text-white font-bold px-5 py-3 rounded-md hover:bg-blue-800 transition">Update Account</button>
       </form>
-    </div>
+    </div>
   );
 };
 

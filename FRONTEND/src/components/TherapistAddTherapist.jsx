@@ -60,7 +60,7 @@ function AddTherapist() {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
       <form onSubmit={submit} style={{ backgroundColor: '#8ab8da', padding: '20px', borderRadius: '5px', maxWidth: '500px' }}>
-      <lable html for="Firstname">Firstname</lable>
+      <lable html for="Firstname">FullName</lable>
         <input
           type="text"
           placeholder="Firstname"

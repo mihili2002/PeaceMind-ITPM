@@ -9,7 +9,7 @@ This project was developed by:
 - Mihili Amaya Marasinghe ([mihili2002](https://github.com/mihili2002))
 - Amanda Bandara ([amandaind](https://github.com/amandaind))
 - Dimalsha Wijethunga ([DimalshaWijethunga](https://github.com/DimalshaWijethunga))
-- IT21215438 ([IT21215438](https://github.com/IT21215438))
+- Malikshi Perera IT21215438 ([IT21215438](https://github.com/IT21215438))
 
 ## 📁 Technologies Used
 - MongoDB

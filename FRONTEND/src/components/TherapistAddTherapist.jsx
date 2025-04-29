@@ -46,16 +46,16 @@ function AddTherapist() {
       })
       .catch((err) => console.error(err));
   };
-  // axios.get('http://localhost:8070/therapist/getTherapistsFullname')
-  //     .then(response => {
-  //       // Handle successful response
-  //       // Set therapists' names to the component's state
-  //       setTherapists(response.data);
-  //     })
-  //     .catch(error => {
-  //       // Handle errors occurred during the request
-  //       console.error('There was a problem with the request:', error);
-  //     });
+  axios.get('http://localhost:8070/therapist/getTherapistsFullname')
+      .then(response => {
+        // Handle successful response
+        // Set therapists' names to the component's state
+        setTherapists(response.data);
+      })
+      .catch(error => {
+        // Handle errors occurred during the request
+        console.error('There was a problem with the request:', error);
+      });
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
@@ -148,7 +148,7 @@ function AddTherapist() {
           required
         />
         
-        <lable html for="Resume">Resume</lable>
+        <lable html for="Resume">password</lable>
         <input
           type="password"
           placeholder="Password"
@@ -157,13 +157,16 @@ function AddTherapist() {
           style={{ width: '100%', padding: '10px', fontSize: '16px', margin: '5px 0' }}
           required
         />
+        <lable html for="contact">Resume</lable>
         <input
           type="file"
           onChange={handleFileChange}
           style={{ width: '100%', padding: '10px', fontSize: '16px', margin: '5px 0' }}
           required
         />
-        <button type="submit" style={{ width: '100%', padding: '10px', fontSize: '16px', margin: '10px 0', backgroundColor: '#4CAF50', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>Submit</button>
+       <button type="submit" style={{ width: '100%', padding: '10px', fontSize: '16px', margin: '10px 0', backgroundColor: '#003366', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>Submit</button>
+
+
       </form>
     </div>
   );

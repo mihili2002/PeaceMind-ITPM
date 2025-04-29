@@ -87,7 +87,9 @@ function Admin() {
           <td className="px-4 py-2">{therapist.phone}</td>
           <td className="px-4 py-2">{therapist.password}</td>
           <td className="px-4 py-2">
-            <button className='bg-green-700 hover:bg-green-900 text-white font-bold px-4 py-2 rounded-full' onClick={(e) => handleDelete(therapist._id)}>Delete</button>
+            // Updated button to grey color
+         <button className='bg-gray-500 hover:bg-gray-700 text-white font-bold px-4 py-2 rounded-full' onClick={(e) => handleDelete(therapist._id)}>Delete</button>
+
           </td>
         </tr>
       ))}

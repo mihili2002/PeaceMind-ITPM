@@ -1,0 +1,57 @@
+.Appo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px; /* Adjust width as needed */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: sans-serif;
+    background-color: #FFFFFF;
+  
+  }
+  
+  .Appo h1{
+  
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .form-group{
+  
+    margin-bottom: 15px;
+  }
+  
+  .form-group label{
+  
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input{
+  
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    width: 100%; /* Stretch input fields to full width */
+  }
+  
+  
+  
+  .Appo button{
+    padding: 10px 20px;
+    background-color: #509CAB;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  
+  
+  
+  
+  

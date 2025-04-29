@@ -1,0 +1,213 @@
+.content{
+    width:100%;
+}
+
+.content--header{
+    display : flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+}
+
+.header--title{
+    color: #526d82;
+}
+
+.header--activity{
+    display: flex;
+    align-items:end;
+    gap:20px;
+}
+.search-box{
+    background-color: #dde6ed;
+    padding: 8px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.search-box input{
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 5px;
+
+}
+.search-box .icon{
+    color: #969393;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+.notify{
+    background: #dde6ed;
+    padding:12px;
+    border-radius: 10px;
+    color: #969393;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease-in-out;
+}
+.notify .icon{
+    transition: 0.5s ease-in-out;
+    font-size: 20px;
+}
+
+.icon:hover{
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+/* card-- container */
+.card--container{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 2rem;
+    
+}
+.card{
+    height : 350px;
+    flex: 1;
+    background: #dde6ed;
+    padding: 20px;
+    border-radius: 10px;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.5s ease-in-out;
+   
+}
+.card:hover{
+    transform: scale(1.04);
+    cursor: pointer;
+}
+
+
+
+.image{
+    height: 130px;
+    width : 100%;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.card-button {
+    position:relative;
+    bottom: 2px; 
+    margin-bottom: 500px;
+    left: 10%; 
+    transform: translateX(-50%);
+    color: white;
+    background-color: #509CAB; 
+    border: 2px solid white; 
+    padding: 8px 8px; 
+    border-radius: 5px; 
+}
+.Appointment-button{
+
+  position:absolute;
+    bottom: 10px;  
+    margin-left: 500px;
+    margin-bottom: 80px;
+    transform: translateX(-50%);
+    color: white;
+    background-color: #509CAB; 
+    border: 2px solid white; 
+    padding: 8px 8px; 
+    border-radius: 5px; 
+}
+.offer-name {
+    text-align: center;
+    color:  #27374d;
+    font-size: larger; 
+    font-weight: bold;
+}
+.offer-detail{
+    color:lightslategray;
+}
+
+/* monthly overview */
+/* Monthly and Weekly Report Buttons */
+.report-button {
+    background-color: #8ab8da;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 8px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Hover effect */
+  .report-button:hover {
+    background-color: #8ab8da;
+  }
+  /* payment history*/
+  /* content.css */
+
+.table-content {
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  table {
+    margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #f2f2f2;
+  }
+  
+  button {
+    padding: 5px 10px;
+    background-color: #146db7;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #8ab8da;
+  }
+  
+  /* invoice */
+  /* content.css */
+
+.invoice-content {
+    padding: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin-bottom: 10px;
+  }
+
+ 
+  /* You can add more specific styles for the content here if needed */
+  

@@ -197,7 +197,7 @@ export default function DefaultTable() {
                       // disabled={row.disabled}
                     >
                       {/* {row.buttonText} */}
-                      confirm
+                      completed
                     </Button> }                    
                   </div>
                 </td>

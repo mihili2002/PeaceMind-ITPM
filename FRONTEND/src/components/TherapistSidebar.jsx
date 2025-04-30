@@ -22,7 +22,7 @@ const Sidebar = () => {
       <div className="menu--list">
         <Link to="/TherapistDashboard" className="item">
           <FaHome className="icon"/>
-          Therapists Manager Dashboard
+          Therapists Admin Dashboard
         </Link>
 
         <Link to={`/TherapistTherapistDashboard/${decodedToken.email}`}className="item">
@@ -32,18 +32,18 @@ const Sidebar = () => {
 
         <Link to={`/TherapistAppoinment/${decodedToken.fullname}`}className="item"> 
           <FaCalendarAlt className="icon" />
-          Appointment
+          Appointments
         </Link>
 
-        <Link to={`/TherapistEmergencyAppoinments/${decodedToken.fullname}`} className="item"> 
+{/*         <Link to={`/TherapistEmergencyAppoinments/${decodedToken.fullname}`} className="item"> 
           <FaCalendarAlt className="icon" />
           Emergency Appointments
-        </Link>
+        </Link> */}
       
-        <Link to="/TherapistPrehandling" className="item"> 
+{/*         <Link to="/TherapistPrehandling" className="item"> 
           <FaBriefcase className="icon" />
           Prescription handling
-        </Link>
+        </Link> */}
 
         <Link to={`/TherapistUserprofile/${decodedToken.id}`} className="item">
           <FaUserCircle className="icon" />

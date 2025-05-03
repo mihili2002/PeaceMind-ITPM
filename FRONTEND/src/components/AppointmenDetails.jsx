@@ -3,65 +3,111 @@ import { Card, Typography } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import AppointmenContentHeader from './AppointmenContentHeader'
-import '../styles/Appointmencontent.css'
-// import { fontWeight } from "html2canvas/dist/types/css/property-descriptors/font-weight";
-
+import AppointmenContentHeader from "./AppointmenContentHeader";
+import "../styles/Appointmencontent.css";
+import "../styles/AppointmenHistory.css";
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 
 export default function Details() {
   const { id } = useParams();
   const [Details, setDetails] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    const getappoinment = () => {
-      axios.get('http://localhost:8070/appointment/Appointment')
+    const getAppointments = () => {
+      axios
+        .get("http://localhost:8070/appointment/Appointment")
         .then((res) => {
           setDetails(res.data);
-
-        }).catch((err) => {
-          alert(err.message);
         })
+        .catch((err) => {
+          alert(err.message);
+        });
     };
 
-    getappoinment();
+    getAppointments();
   }, []);
 
   const navigate = useNavigate();
 
-  const deleteappoinment = (id) => {
-    
-    axios.delete(`http://localhost:8070/appointment/Appointmentdelete/${id}`)
-      .then(Response => {
-        alert('Details deleted successfully');
-        setDetails(Details.filter(appoinments => appoinments._id !== id));
-        navigate('/AppointmenHistory');
+  const deleteAppointment = (id) => {
+    axios
+      .delete(`http://localhost:8070/appointment/Appointmentdelete/${id}`)
+      .then((response) => {
+        alert("Details deleted successfully");
+        setDetails(Details.filter((appointment) => appointment._id !== id));
+        navigate("/AppointmenHistory");
       })
-      .catch(error => {
-        console.error('There was an error!', error);
+      .catch((error) => {
+        console.error("There was an error!", error);
       });
   };
 
-   // Function to format date in YYYY-MM-DD format
-   const formatDate = (dateString) => {
+  // Generate PDF
+  const generatePDF = () => {
+    const doc = new jsPDF();
+    doc.text("Appointment History", 10, 10);
+
+    let yPos = 20;
+    filteredAppointments.forEach((appointment, index) => {
+      yPos += 10;
+      doc.text(`${index + 1}. Name: ${appointment.name}`, 10, yPos);
+      yPos += 5;
+      doc.text(`   Address: ${appointment.address}`, 10, yPos);
+      yPos += 5;
+      doc.text(`   Email: ${appointment.email}`, 10, yPos);
+      yPos += 5;
+      doc.text(`   Therapist: ${appointment.therapist}`, 10, yPos);
+      yPos += 5;
+      doc.text(`   Contact Number: ${appointment.ContactNo}`, 10, yPos);
+      yPos += 5;
+      doc.text(`   Date: ${formatDate(appointment.AppointmentDate)}`, 10, yPos);
+      yPos += 5;
+      doc.text(`   Time: ${appointment.time}`, 10, yPos);
+      yPos += 10;
+    });
+
+    doc.save("AppointmentHistory.pdf");
+  };
+
+  // Format date as YYYY-MM-DD
+  const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString();
   };
 
-  
+  // Handle search input change
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value.toLowerCase());
+  };
+
+  // Filter appointments based on searched month
+  const filteredAppointments = Details.filter((appointment) => {
+    const appointmentMonth = new Date(appointment.AppointmentDate)
+      .toLocaleString("default", { month: "long" })
+      .toLowerCase();
+    return appointmentMonth.includes(searchTerm);
+  });
 
   return (
     <div className="content">
-      <AppointmenContentHeader />
+      <AppointmenContentHeader onSearch={handleSearch} />
       <div className="table-content">
-      <h2 style={{ fontSize: '1.4em' }}>Appointment History</h2>       
-       <Link to="/PaymentUser/PaymentContent" style={{ fontSize: '1.4em' ,color: 'white', backgroundColor: '#8ab8da', padding: '5px 10px', borderRadius: '5px', textDecoration: 'none' }}>Payment</Link>
+        <h2 style={{ fontSize: "1.4em" }}>Appointment History</h2>
+        <button
+          className="bg-blue-500 text-white font-bold px-5 py-3 m-2"
+          onClick={generatePDF}
+        >
+          Generate PDF
+        </button>
 
         <table>
           <thead>
             <tr>
               <th>#</th>
               <th>Name</th>
-            <th>Address</th>
+              <th>Address</th>
               <th>Email</th>
               <th>Therapist</th>
               <th>Contact Number</th>
@@ -69,24 +115,35 @@ export default function Details() {
               <th>Time</th>
               <th>Edit</th>
               <th>Delete</th>
-             
-              
             </tr>
           </thead>
           <tbody>
-            {Details.map((appoinments, index) => (
-              <tr key={appoinments.id}>
+            {filteredAppointments.map((appointment, index) => (
+              <tr key={appointment._id}>
                 <td>{index + 1}</td>
-                <td>{appoinments.name}</td>
-               <td>{appoinments.address}</td>
-                <td>{appoinments.email}</td>
-                <td>{appoinments.therapist}</td>
-                <td>{appoinments.ContactNo}</td>
-                <td>{formatDate(appoinments.AppointmentDate)}</td>
-                <td>{appoinments.time}</td>
-                <td><button className="report-button"><Link to={`/Appointmentupdate/${appoinments._id}`}>Edit</Link></button></td>
-                <td><button type="button" onClick={() => deleteappoinment(appoinments._id)}className="report-button">Delete</button></td>
-               
+                <td>{appointment.name}</td>
+                <td>{appointment.address}</td>
+                <td>{appointment.email}</td>
+                <td>{appointment.therapist}</td>
+                <td>{appointment.ContactNo}</td>
+                <td>{formatDate(appointment.AppointmentDate)}</td>
+                <td>{appointment.time}</td>
+                <td>
+                  <button className="report-button">
+                    <Link to={`/Appointmentupdate/${appointment._id}`}>
+                      Edit
+                    </Link>
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    onClick={() => deleteAppointment(appointment._id)}
+                    className="report-button"
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -94,6 +151,4 @@ export default function Details() {
       </div>
     </div>
   );
-};
-
-
+}
